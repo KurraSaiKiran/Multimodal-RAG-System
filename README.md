@@ -173,13 +173,6 @@ response = requests.post('http://localhost:5000/api/query', json=query)
 print(response.json()['response'])
 ```
 
-## 🧾 Sample Output
-
-Here’s an example of how the Multimodal RAG System responds to a document query after processing an uploaded resume:
-
-![Sample Output](Screenshot%202025-10-30%20212607.png)
-
-
 The modern web interface provides:
 - Drag-and-drop file upload
 - Real-time query processing

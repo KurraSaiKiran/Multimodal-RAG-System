@@ -1,0 +1,51 @@
+# Web Framework
+Flask==3.0.0
+Flask-CORS==4.0.0
+
+# Vector Database
+chromadb==0.4.22
+
+# PDF Processing
+PyPDF2==3.0.1
+pdf2image==1.16.3
+pdfplumber==0.10.3
+
+# Image Processing
+Pillow==10.1.0
+opencv-python==4.8.1.78
+
+# AI/ML Libraries
+transformers==4.36.2
+torch==2.1.2
+sentence-transformers==2.2.2
+openai==1.6.1
+
+# Text Processing
+nltk==3.8.1
+tiktoken==0.5.2
+
+# Utilities
+python-dotenv==1.0.0
+python-magic-bin==0.4.14
+requests==2.31.0
+aiofiles==23.2.1
+
+# Monitoring and Tracing
+langsmith==0.0.69
+guardrails-ai==0.4.0
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
+
+# Caching
+redis==5.0.1
+diskcache==5.6.3
+
+# Async
+aiohttp==3.9.1
+
+# Data Processing
+numpy==1.26.2
+pandas==2.1.4

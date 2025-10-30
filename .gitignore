@@ -1,4 +1,3 @@
-# Python
 __pycache__/
 *.py[cod]
 *$py.class
@@ -19,53 +18,33 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
-# Virtual Environment
-venv/
-env/
-ENV/
-.venv
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# Environment variables
 .env
-.env.local
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
 
-# Database
-*.db
-*.sqlite
-*.sqlite3
-chroma_db/
-vector_store/
-
-# Logs
-logs/
-*.log
-
-# Uploads
-uploads/
-temp/
-cache/
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Testing
 .pytest_cache/
 .coverage
 htmlcov/
 
-# Misc
-*.pdf
+.DS_Store
+.vscode/
+.idea/
+
+chroma_db/
+uploads/
+backend/chroma_db/
+backend/uploads/
+logs/
+*.log
+*.png
 *.jpg
 *.jpeg
-*.png
+*.pdf
 *.txt
-!requirements.txt
+*.md

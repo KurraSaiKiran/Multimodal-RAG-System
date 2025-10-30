@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimodal RAG System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-brain"></i> Multimodal RAG System</h1>
+            <p>Upload documents and query your knowledge base</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Upload Section -->
+            <div class="card">
+                <div class="card-header">
+                    <h2><i class="fas fa-upload"></i> Upload Documents</h2>
+                </div>
+                <div class="card-body">
+                    <div class="upload-area" id="uploadArea">
+                        <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                        <p>Drag & drop files here or click to browse</p>
+                        <p class="file-types">Supports: PDF, TXT, MD, PNG, JPG, JPEG</p>
+                        <input type="file" id="fileInput" multiple accept=".txt,.md,.png,.jpg,.jpeg,.pdf" hidden>
+                    </div>
+                    
+                    <div class="selected-files" id="selectedFiles"></div>
+                    
+                    <div class="upload-controls">
+                        <button class="btn btn-primary" id="uploadBtn" disabled>
+                            <i class="fas fa-upload"></i> Upload Files
+                        </button>
+                        <button class="btn btn-secondary" id="clearBtn">
+                            <i class="fas fa-times"></i> Clear
+                        </button>
+                    </div>
+                    
+                    <div class="upload-progress" id="uploadProgress" style="display: none;">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <span class="progress-text" id="progressText">Uploading...</span>
+                    </div>
+                    
+                    <div class="upload-result" id="uploadResult"></div>
+                </div>
+            </div>
+
+            <!-- Query Section -->
+            <div class="card">
+                <div class="card-header">
+                    <h2><i class="fas fa-search"></i> Query Documents</h2>
+                </div>
+                <div class="card-body">
+                    <div class="query-form">
+                        <textarea 
+                            id="queryInput" 
+                            placeholder="Ask anything about your uploaded documents..."
+                            rows="4"
+                        ></textarea>
+                        
+                        <div class="query-controls">
+                            <select id="contentFilter" class="filter-select">
+                                <option value="">All Content Types</option>
+                                <option value="text">Text Only</option>
+                                <option value="image">Images Only</option>
+                                <option value="pdf">PDF Content Only</option>
+                            </select>
+                            
+                            <button class="btn btn-primary" id="queryBtn">
+                                <i class="fas fa-search"></i> Query
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="query-result" id="queryResult"></div>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="card stats-card">
+                <div class="card-header">
+                    <h2><i class="fas fa-chart-bar"></i> System Statistics</h2>
+                    <div>
+                        <button class="btn btn-small" id="refreshStatsBtn">
+                            <i class="fas fa-sync-alt"></i> Refresh
+                        </button>
+                        <button class="btn btn-small" id="testSystemBtn" style="margin-left: 10px;">
+                            <i class="fas fa-flask"></i> Test System
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="stats-grid" id="statsGrid">
+                        <div class="stat-item">
+                            <div class="stat-value" id="totalDocs">0</div>
+                            <div class="stat-label">Total Documents</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="systemStatus">Healthy</div>
+                            <div class="stat-label">System Status</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Processing...</p>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -173,6 +173,17 @@ response = requests.post('http://localhost:5000/api/query', json=query)
 print(response.json()['response'])
 ```
 
+## 📸 Screenshots
+
+### Web Interface
+![Multimodal RAG System Interface](Screenshot%202025-10-30%20212607.png)
+
+The modern web interface provides:
+- Drag-and-drop file upload
+- Real-time query processing
+- Source attribution with relevance scores
+- System statistics and health monitoring
+
 ## 🔧 Technical Details
 
 ### Supported File Formats
